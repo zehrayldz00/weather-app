@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:weather_app/utils/location.dart';
+
 
 // For dynamic operations --> Stateful Class
 class LoadingScreen extends StatefulWidget {
@@ -9,6 +11,9 @@ class LoadingScreen extends StatefulWidget {
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
+  late LocationHelper locationData;
+  //15.55
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

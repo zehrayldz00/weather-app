@@ -40,7 +40,6 @@ class _MainScreenState extends State<MainScreen> {
                 letterSpacing: -5,
               ),
               ),
-            //14.01 de kaldım
             )
 
           ],
