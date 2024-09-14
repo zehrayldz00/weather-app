@@ -12,7 +12,24 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
   late LocationHelper locationData;
-  //15.55
+  Future<void> getLocationData() async{
+    locationData = LocationHelper();
+    await locationData.getCurrentLocation();
+
+    if(locationData.latitude == null || locationData.longitude == null){
+      print("Konum bilgileri gelmiyor.");
+    } else{
+      print("latitude : " + locationData.latitude.toString());
+      print("longitude : " + locationData.longitude.toString());
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getLocationData();
+  }
 
   @override
   Widget build(BuildContext context) {
