@@ -16,7 +16,10 @@ class LocationHelper {
     if (!_serviceEnabled) {
       _serviceEnabled = await location.requestService();
       if (!_serviceEnabled) {
-        return;
+        latitude = 0.0;
+        longitude = 0.0;
+        //throw Exception("Konum servisi aktif değil.");
+        //return;
       }
     }
 
@@ -25,7 +28,10 @@ class LocationHelper {
     if (_permissionGranted == PermissionStatus.denied) {
       _permissionGranted = await location.requestPermission();
       if (_permissionGranted != PermissionStatus.granted) {
-        return;
+        latitude = 0.0;
+        longitude = 0.0;
+        //throw Exception("Konum izni verilmedi.");
+        //return;
       }
     }
 
